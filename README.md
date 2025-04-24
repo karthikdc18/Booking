@@ -3,7 +3,7 @@
 ## Prerequisites
 1. **Java JDK 17** or later installed.
 2. **Maven** for dependency management.
-3. **MySQL** or other required databases set up.
+3. **INMemoryDB** .
 4. **application.properties** configured with database credentials.
 5. An IDE like **IntelliJ IDEA** or **Eclipse** installed.
 
