@@ -1,0 +1,234 @@
+{
+	"info": {
+		"_postman_id": "5883f1ef-9649-4e71-a704-b7c5fe9c066a",
+		"name": "Movie",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16072121"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/shows/register?name=Mad-2&genre=Comedy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"shows",
+						"register"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Mad-2"
+						},
+						{
+							"key": "genre",
+							"value": "Comedy"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Show Timing",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"13:00-16:00\": 56,\r\n    \"20:00-23:00\": 80\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/shows/slots?showName=Mad-2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"shows",
+						"slots"
+					],
+					"query": [
+						{
+							"key": "showName",
+							"value": "Mad-2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search By Genre",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/shows/genre?genre=Comedy",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"shows",
+						"genre"
+					],
+					"query": [
+						{
+							"key": "genre",
+							"value": "Comedy"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Book Ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/shows/tickets/book?userName=Manoj&showName=Mad-2&slot=13:00-16:00&persons=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"shows",
+						"tickets",
+						"book"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "Manoj"
+						},
+						{
+							"key": "showName",
+							"value": "Mad-2"
+						},
+						{
+							"key": "slot",
+							"value": "13:00-16:00"
+						},
+						{
+							"key": "persons",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X POST \"http://localhost:8080/shows/tickets/book?userName=UserA&showName=TMKOC&slot=9:00-10:00&persons=2\""
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/shows/tickets/cancel?bookingId=ad6db947-92b5-4e48-a94b-3083330a4a49",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"shows",
+						"tickets",
+						"cancel"
+					],
+					"query": [
+						{
+							"key": "bookingId",
+							"value": "ad6db947-92b5-4e48-a94b-3083330a4a49"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Booking for User",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/shows/users/bookings?userName=Manoj",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"shows",
+						"users",
+						"bookings"
+					],
+					"query": [
+						{
+							"key": "userName",
+							"value": "Manoj"
+						}
+					]
+				},
+				"description": "Generated from cURL: curl -X GET \"http://localhost:8080/shows/users/bookings?userName=UserA\""
+			},
+			"response": []
+		},
+		{
+			"name": "Trending",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/shows/trending",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"shows",
+						"trending"
+					]
+				},
+				"description": "Generated from cURL: curl -X GET \"http://localhost:8080/shows/trending\""
+			},
+			"response": []
+		}
+	]
+}
